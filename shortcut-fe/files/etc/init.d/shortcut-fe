@@ -29,6 +29,7 @@ load_sfe() {
 	[ -e "/lib/modules/$kernel_version/$1.ko" ] && {
 		[ -d "/sys/module/$module_path" ] || insmod /lib/modules/$kernel_version/$1.ko
 	}
+	[ "$1" = "fast-classifier" ] && echo 4 > /sys/fast_classifier/offload_at_pkts
 }
 
 start() {
