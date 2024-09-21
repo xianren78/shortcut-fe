@@ -339,7 +339,11 @@ static bool fast_classifier_find_dev_and_mac_addr(struct sk_buff *skb, sfe_ip_ad
 	 * neighbours are routers too.
 	 */
 	if (likely(is_v4)) {
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,11,0)
+		rt = ip_route_output(&init_net, addr->ip, 0, 0, 0, 0);
+#else
 		rt = ip_route_output(&init_net, addr->ip, 0, 0, 0);
+#endif
 		if (unlikely(IS_ERR(rt))) {
 			goto ret_fail;
 		}
