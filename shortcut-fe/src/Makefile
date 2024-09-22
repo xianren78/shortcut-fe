@@ -24,4 +24,4 @@ shortcut-fe-cm-objs := \
 ccflags-y += -Werror -Wall
 
 # clang
-ccflags-y += -Wno-frame-address
+ccflags-y += -Wno-frame-address -Wno-unused-but-set-parameter
