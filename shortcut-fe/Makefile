@@ -49,6 +49,8 @@ define KernelPackage/shortcut-fe/install
 	$(INSTALL_BIN) ./files/etc/init.d/shortcut-fe $(1)/etc/init.d
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/usr/bin/sfe_dump $(1)/usr/bin
+	$(INSTALL_DIR) $(1)/usr/share/ucitrack
+	$(INSTALL_CONF) ./files/usr/share/ucitrack/shortcut-fe.json $(1)/usr/share/ucitrack/shortcut-fe.json
 endef
 
 HAVE_ECM:=$(CONFIG_PACKAGE_kmod-qca-nss-ecm-premium)$(CONFIG_PACKAGE_kmod-qca-nss-ecm-noload)$(CONFIG_PACKAGE_kmod-qca-nss-ecm-premium-noload)$(CONFIG_PACKAGE_kmod-qca-nss-ecm-standard)
