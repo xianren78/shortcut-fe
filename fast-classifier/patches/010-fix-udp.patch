@@ -8,7 +8,7 @@
  #include <linux/spinlock.h>
  #include <linux/if_bridge.h>
  #include <linux/hashtable.h>
-@@ -245,6 +246,16 @@
+@@ -245,6 +246,16 @@ int fast_classifier_recv(struct sk_buff
  		dev = master_dev;
  	}
  
@@ -25,7 +25,7 @@
  	/*
  	 * We're only interested in IPv4 and IPv6 packets.
  	 */
-@@ -1128,7 +1139,20 @@
+@@ -1132,7 +1143,20 @@ static unsigned int fast_classifier_post
  	}
  	dev_put(dev);
  
